@@ -35,8 +35,8 @@ header{
     height: 70px;
     background-color: rgba(255, 255, 255, 0,123);
     backdrop-filter: blur(10px);
-    padding: 0, 30px;
-    box-shadow: 0,0,15px, #72a1de8d;
+    padding: 0  30px;
+    box-shadow: 0 0 15px  #72a1de8d;
     z-index: 999;
 }
 
@@ -47,7 +47,8 @@ header{
 
 .left img{
     width: 40px;
-    margin: 0, 15px;
+    margin: 0 15px;
+    border-radius: 50%;
 }
 
 
@@ -71,7 +72,7 @@ header ul a{
     text-decoration: none;
     color: white;
     font-weight: 700;
-    margin: 0, 10px;
+    margin: 0  10px;
 }
 
 
@@ -325,8 +326,154 @@ header ul a{
 }
 
 
+/* Contact */
+
+.contact-section{
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+    position: relative;
+}
+
+.contact-section h1{
+    position: absolute;
+    top: 10%;
+    left: 40%;
+
+}
+
+.social-box{
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+}
+
+.social-box a{
+    color: lightgray;
+    text-decoration: none;
+    font-size: 20px;
+    text-wrap: nowrap;
+}
 
 
+.social-box i{
+    color: #727fde;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.social-icons a i{
+    color: white;
+    margin-top: 40px;
+}
+
+.contact-box p{
+    max-width: 400px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.contact-box input{
+    padding: 7.5px 30px;
+    background-color: lightgray;
+    width: 80%;
+    height: 25px;
+    border: none;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.contact-box button{
+    margin-top: 30px;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #727fde4b;
+    background-color: #2200493d;
+    box-shadow: 0 0 5px #727fde86;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-box button:hover{
+    box-shadow: 0 0 15px #727fde86;
+    opacity: 0.7;
+}
+
+
+
+/* Animation de flou cinetique */
+
+.autoBlur{
+    animation: autoBlurAnimation linear both;
+    animation-timeline: view();
+}
+
+@keyframes autoBlurAnimation{
+    0%{
+        filter: blur(40px);
+        opacity: 0;
+    }
+    35%, 65%{
+        filter: blur(0px);
+        opacity: 1;
+    }
+    100%{
+        filter: blur(40px);
+        opacity: 0;
+    }
+    
+}
+
+
+/*  Animation d'affichage */
+
+.autoDisplay{
+    animation: autoDisplayAnimation both;
+    animation-timeline: view();
+}
+
+@keyframes autoDisplayAnimation{
+    from{
+        opacity: 0.2;
+        filter: blur(10px);
+        transform: translateY(-20px) scale(0);
+    }
+    50%{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0) scale(1);
+    }
+}
+
+
+/* Animation d'affichage de coté */
+
+.fadeInRight{
+    animation: fadeInRightAnimation both;
+    animation-timeline: view();
+}
+
+@keyframes fadeInRightAnimation {
+    from{
+        opacity: 0;
+        filter: blur(20px);
+        transform: translateX(-500px) scale(0.2);
+    }
+    35%, 65%{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0) scale(1);
+    }
+    100%{
+        filter: blur(20px);
+    }
+    
+}
 
 
 
